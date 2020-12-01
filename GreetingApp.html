@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="Style.css" />
+<title>Greeting Message</title>
+<style>
+html {
+	background: url("bluelines.jpg") no-repeat center center fixed;
+	
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+	<div id="main"></div>
+
+	<script>
+	
+		var myArray = [["Yuvraj","Happy&nbspBirthday"],["Dhoni","Happy&nbspBirthday"],["Raina","Happy&nbspBirthday"],["Bhuvi","Happy&nbspBirthday"],["Ganguly","Happy&nbspBirthday"],["kohli","Happy&nbspBirthday"],["Rohit","Happy&nbspBirthday"],["Iyer","Happy&nbspBirthday"],["karthik","Happy&nbspBirthday"]]
+		var x = "", i
+		for (i = 0; i < myArray.length; i++) {
+			x = x
+					+ "<div class="+"card"+"><form><table><tr><td>name</td><td>:</td><td>"+myArray[i][0]+"</td></tr><tr></tr><tr></tr><tr></tr><tr><td>message</td><td>:</td><td>"+myArray[i][1]+"</td></tr></table></form></div>";
+		}
+		document.getElementById("main").innerHTML = x;
+	</script>
+
+
+
+</body>
+</html>

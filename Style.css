@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 20px;
+	border: 20px;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}
+
+.card {
+	width: 200px;
+	height: 100px;
+	background-color: silver;
+	padding: 10px 160px 20px 0px;
+	font-size: 20px;
+	text-align: left;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.card:hover {
+	box-shadow: 2px 2px 10px black;
+}
+
+@media ( max-width : 600px) {
+	.card {
+		width: 100%;
+		display: block;
+	}
+}
