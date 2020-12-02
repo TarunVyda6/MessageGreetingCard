@@ -5,37 +5,31 @@
     <title>Title</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'Style.css' %}?{% now 'U' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         html
          {
             background: url("{% static 'bluelines.jpg' %}") no-repeat center center fixed;
             background-size: cover;
          }
-
     </style>
 </head>
 <body>
+
 <div id="main"></div>
-{% for item in mydata_json %}
-<div class="card">
-    <form>
-        <table>
-            <tr>
-                <td>name</td>
-                <td>:</td>
-                <td>{{item.name}}</td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr>
-                <td>message</td>
-                <td>:</td>
-                <td>{{item.message}}</td>
-            </tr>
-        </table>
-    </form>
-</div>
-{% endfor %}
+<script>
+var myArray = [];
+    $(document).ready(function(){
+    $.get("http://127.0.0.1:8080/get_card_data", function(data, status){
+      myArray = JSON.parse(data)
+             var x = "", i
+		for (i = 0; i < myArray.length; i++) {
+		console.log(myArray[i])
+			x = x + "<div class="+"card"+"><form><table><tr><td>name</td><td>:</td><td>"+myArray[i]['name']+"</td></tr><tr></tr><tr></tr><tr></tr><tr><td>message</td><td>:</td><td>"+myArray[i]['message']+"</td></tr></table></form></div>";
+		}
+		document.getElementById("main").innerHTML = x;
+      });
+      });
+</script>
 </body>
 </html>
