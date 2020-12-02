@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.get, name='get')
+    path('', views.greeting, name='greeting'),
+    path('get_card_data/', views.GreetingView.as_view())
 
 ]
